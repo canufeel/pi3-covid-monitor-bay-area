@@ -28,7 +28,7 @@ pub fn get_data_loop (tx: Sender<Vec<HashMap<String, String>>>) -> Result<(), St
 
       match get_data().await {
         Ok(data) => {
-          println!("{:#?}", data);
+          // println!("{:#?}", data);
           tx
             .send(data)
             .map_err(|e| e.to_string())?;
